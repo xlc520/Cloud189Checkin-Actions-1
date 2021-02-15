@@ -1,14 +1,16 @@
-name: Cloud189Checkin
+name: '天翼网盘签到'
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  watch:
-    types: started
+  workflow_dispatch: #手动触发工作流程运行
   schedule:
-    - cron: 1 0 * * *
+    - cron: 28 2 * * * 
+#   push: #修改执行
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+#   watch:
+#     types: started
+
 
 jobs:
   Cloud189Checkin:
@@ -102,7 +104,7 @@ jobs:
         echo "共有 $user_num 个账号等待签到"
         fi
 
-        random_time=$(($RANDOM % 5 + 1))
+        random_time=$(($RANDOM % 1 + 1))
         for ((i=0;i<$user_num;i++))
         do
 
